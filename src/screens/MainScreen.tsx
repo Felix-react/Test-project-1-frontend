@@ -156,23 +156,40 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
+                  flexDirection: 'row', // Ensures the icon and text are on the same line
                 }}
               >
-                <AddIcon sx={{ color: '#202020' }} />
+                <AddIcon sx={{ color: '#202020', mr: 1 }} />{' '}
+                {/* Add margin-right to space out the icon */}
                 <Typography
-                  sx={{ color: '#202020', fontSize: 14, fontWeight: 'bold' }}
+                  sx={{
+                    color: '#202020',
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    whiteSpace: 'nowrap',
+                  }} // Prevent text wrapping
                 >
                   SAVE RECIPE
                 </Typography>
               </Button>
+
               <Button
                 variant="outlined"
                 color="error"
-                sx={{ display: 'flex', alignItems: 'center' }}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row', // Ensures the icon and text are on the same line
+                }}
               >
                 <PrintIcon sx={{ color: '#202020', mr: 1 }} />
                 <Typography
-                  sx={{ color: '#202020', fontSize: 13, fontWeight: 'bold' }}
+                  sx={{
+                    color: '#202020',
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                    whiteSpace: 'nowrap',
+                  }} // Prevent text wrapping
                 >
                   PRINT
                 </Typography>

@@ -13,7 +13,9 @@ const BreadCrumbs = () => {
   return (
     <div className="">
       <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="small" />}
+        separator={
+          <NavigateNextIcon fontSize="small" sx={{ color: '#a73439' }} />
+        } // Custom color for separator
         aria-label="breadcrumb"
       >
         {pathParts?.map((part, index) => {
