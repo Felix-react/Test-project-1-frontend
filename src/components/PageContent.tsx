@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 import MainScreen from '@/screens/MainScreen';
 import React from 'react';
 import { recipes } from '@/data/recipe';
