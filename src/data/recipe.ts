@@ -9,7 +9,7 @@ export const recipes: Recipe[] = [
     prepTime: '10 mins',
     bakeTime: '1 hr to 1 hr 15 mins',
     totalTime: '1 hr 10 mins',
-    servings: '1loafs, 12 generous servings',
+    servings: '1 loafs, 12 generous servings',
     imageUrl: 'https://i.pinimg.com/736x/aa/b1/70/aab1703f46f46e0dd96f2a66e677e26e.jpg'
   },
 ];
