@@ -20,13 +20,16 @@ const BreadCrumbs = () => {
       >
         {pathParts?.map((part, index) => {
           const path = `/${pathParts.slice(0, index + 1).join('/')}`;
-          const capitalizedPart = part.charAt(0).toUpperCase() + part.slice(1);
+          const capitalizedPart = part.toUpperCase();
           return (
             <Link
               key={index}
               underline="hover"
               color="#666666"
-              sx={{ fontWeight: 'bold' }}
+              sx={{
+                fontWeight: 'bold',
+                fontSize: 14,
+              }}
               href={path}
             >
               {capitalizedPart}

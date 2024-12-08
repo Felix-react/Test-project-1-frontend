@@ -10,10 +10,10 @@ import {
   IconButton,
   useMediaQuery,
   useTheme,
+  Container,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
-import { usePathname } from 'next/navigation';
 import SecondNavbar from './SecondNavbar';
 import Image from 'next/image';
 
@@ -22,11 +22,10 @@ export default function Navbar() {
   const [isClient, setIsClient] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const pathname = usePathname();
 
   const linkStyles = {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: 600,
     marginRight: 2,
     textDecoration: 'none',
     '&:hover, &:focus': {
@@ -49,16 +48,21 @@ export default function Navbar() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
       {/* First Row: Logo and First Navbar */}
-      <Box sx={{ display: 'flex', position: 'relative', width: '100%' }}>
+      <Container
+        sx={{
+          display: 'flex',
+          position: 'relative',
+          width: '100%',
+        }}
+      >
         {/* Render Image only on the client and hide on mobile */}
         {isClient && !isMobile && (
           <Box sx={{ position: 'absolute', top: 0, left: 0, zIndex: 10 }}>
             <Image
               src="/image/monkey.png"
               alt="Monkey Icon"
-              width={130}
-              height={130}
-              style={{ marginLeft: '100px' }}
+              width={110}
+              height={110}
               priority
             />
           </Box>
@@ -70,11 +74,11 @@ export default function Navbar() {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            height: 100,
+            height: 80,
             boxShadow: 'none',
             flex: 1,
             zIndex: 5,
-            marginLeft: isMobile ? 0 : '240px',
+            marginLeft: isMobile ? 0 : '100px',
           }}
         >
           <Toolbar
@@ -112,7 +116,7 @@ export default function Navbar() {
                 color="inherit"
                 sx={linkStyles}
               >
-                Shop
+                SHOP
               </Link>
               <Link
                 component={NextLink}
@@ -120,7 +124,7 @@ export default function Navbar() {
                 color="inherit"
                 sx={linkStyles}
               >
-                Recipes
+                RECIPES
               </Link>
               <Link
                 component={NextLink}
@@ -128,7 +132,7 @@ export default function Navbar() {
                 color="inherit"
                 sx={linkStyles}
               >
-                Learn
+                LEARN
               </Link>
               <Link
                 component={NextLink}
@@ -136,7 +140,7 @@ export default function Navbar() {
                 color="inherit"
                 sx={linkStyles}
               >
-                About
+                ABOUT
               </Link>
               <Link
                 component={NextLink}
@@ -144,66 +148,78 @@ export default function Navbar() {
                 color="inherit"
                 sx={linkStyles}
               >
-                Blog
+                BLOG
               </Link>
             </Box>
           </Toolbar>
         </AppBar>
-      </Box>
+      </Container>
 
       {/* Conditionally render SecondNavbar for /recipes and its subroutes */}
-      {pathname.startsWith('/recipes') && <SecondNavbar />}
+      <SecondNavbar />
 
       {/* Drawer for mobile navigation */}
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={toggleDrawer}
-        sx={{
-          width: 250,
-          flexShrink: 0,
-          zIndex: 1000,
-          '& .MuiDrawer-paper': {
+      <Container>
+        <Drawer
+          anchor="left"
+          open={drawerOpen}
+          onClose={toggleDrawer}
+          sx={{
             width: 250,
-            boxSizing: 'border-box',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 2,
-          },
-        }}
-      >
-        {/* Links inside Drawer */}
-        <Link component={NextLink} href="/shop" color="inherit" sx={linkStyles}>
-          Shop
-        </Link>
-        <Link
-          component={NextLink}
-          href="/recipes"
-          color="inherit"
-          sx={linkStyles}
+            flexShrink: 0,
+            zIndex: 1000,
+            '& .MuiDrawer-paper': {
+              width: 250,
+              boxSizing: 'border-box',
+              display: 'flex',
+              flexDirection: 'column',
+              padding: 2,
+            },
+          }}
         >
-          Recipes
-        </Link>
-        <Link
-          component={NextLink}
-          href="/learn"
-          color="inherit"
-          sx={linkStyles}
-        >
-          Learn
-        </Link>
-        <Link
-          component={NextLink}
-          href="/about"
-          color="inherit"
-          sx={linkStyles}
-        >
-          About
-        </Link>
-        <Link component={NextLink} href="/blog" color="inherit" sx={linkStyles}>
-          Blog
-        </Link>
-      </Drawer>
+          {/* Links inside Drawer */}
+          <Link
+            component={NextLink}
+            href="/shop"
+            color="inherit"
+            sx={linkStyles}
+          >
+            Shop
+          </Link>
+          <Link
+            component={NextLink}
+            href="/recipes"
+            color="inherit"
+            sx={linkStyles}
+          >
+            Recipes
+          </Link>
+          <Link
+            component={NextLink}
+            href="/learn"
+            color="inherit"
+            sx={linkStyles}
+          >
+            Learn
+          </Link>
+          <Link
+            component={NextLink}
+            href="/about"
+            color="inherit"
+            sx={linkStyles}
+          >
+            About
+          </Link>
+          <Link
+            component={NextLink}
+            href="/blog"
+            color="inherit"
+            sx={linkStyles}
+          >
+            Blog
+          </Link>
+        </Drawer>
+      </Container>
     </Box>
   );
 }
