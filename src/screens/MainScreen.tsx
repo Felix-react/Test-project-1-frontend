@@ -85,7 +85,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 >
                   <Box>
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                      Prep
+                      PREP
                     </Typography>
                     <Typography variant="h6">{recipe.prepTime}</Typography>
                   </Box>
@@ -101,7 +101,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 >
                   <Box>
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                      Bake
+                      BAKE
                     </Typography>
                     <Typography variant="h6">{recipe.bakeTime}</Typography>
                   </Box>
@@ -117,7 +117,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 >
                   <Box>
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                      Total
+                      TOTAL
                     </Typography>
                     <Typography variant="h6">{recipe.totalTime}</Typography>
                   </Box>
@@ -144,7 +144,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
               />
               <Box sx={{}}>
                 <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                  Yield
+                  YIELD
                 </Typography>
                 <Typography variant="h6">{recipe.servings}</Typography>
               </Box>
