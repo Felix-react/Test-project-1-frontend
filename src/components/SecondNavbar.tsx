@@ -18,7 +18,9 @@ const SecondNavbar = () => {
   // Styles for active and hover links
   const linkStyles = {
     marginRight: 2,
+    fontWeight: 'bold',
     textDecoration: 'none',
+    color: '#44413E',
     '&:hover': {
       textDecoration: 'underline',
       textDecorationColor: '#a73439',

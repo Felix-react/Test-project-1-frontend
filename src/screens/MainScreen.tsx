@@ -87,7 +87,9 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                       PREP
                     </Typography>
-                    <Typography variant="h6">{recipe.prepTime}</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                      {recipe.prepTime}
+                    </Typography>
                   </Box>
                 </Box>
               </Grid>
@@ -103,7 +105,9 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                       BAKE
                     </Typography>
-                    <Typography variant="h6">{recipe.bakeTime}</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                      {recipe.bakeTime}
+                    </Typography>
                   </Box>
                 </Box>
               </Grid>
@@ -119,7 +123,9 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                       TOTAL
                     </Typography>
-                    <Typography variant="h6">{recipe.totalTime}</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                      {recipe.totalTime}
+                    </Typography>
                   </Box>
                 </Box>
               </Grid>
@@ -146,7 +152,9 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                   YIELD
                 </Typography>
-                <Typography variant="h6">{recipe.servings}</Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  {recipe.servings}
+                </Typography>
               </Box>
             </Box>
             <Box sx={{ display: 'flex', gap: 1 }}>
