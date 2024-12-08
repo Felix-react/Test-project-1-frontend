@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import Breadcrumbs from '@mui/material/Breadcrumbs'; // Ensure the component name starts with uppercase
+import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { usePathname } from 'next/navigation'; // Import from next/navigation instead of next/router
+import { usePathname } from 'next/navigation';
 
 const BreadCrumbs = () => {
-  const pathname = usePathname(); // usePathname will return the current path
+  const pathname = usePathname();
 
   const pathParts = pathname?.split('/').filter(Boolean);
 
@@ -15,12 +15,12 @@ const BreadCrumbs = () => {
       <Breadcrumbs
         separator={
           <NavigateNextIcon fontSize="small" sx={{ color: '#a73439' }} />
-        } // Custom color for separator
+        }
         aria-label="breadcrumb"
       >
         {pathParts?.map((part, index) => {
           const path = `/${pathParts.slice(0, index + 1).join('/')}`;
-          const capitalizedPart = part.charAt(0).toUpperCase() + part.slice(1); // Capitalize the first letter of each part
+          const capitalizedPart = part.charAt(0).toUpperCase() + part.slice(1);
           return (
             <Link
               key={index}

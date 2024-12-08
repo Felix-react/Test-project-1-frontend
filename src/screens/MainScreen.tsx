@@ -156,18 +156,17 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  flexDirection: 'row', // Ensures the icon and text are on the same line
+                  flexDirection: 'row',
                 }}
               >
                 <AddIcon sx={{ color: '#202020', mr: 1 }} />{' '}
-                {/* Add margin-right to space out the icon */}
                 <Typography
                   sx={{
                     color: '#202020',
                     fontSize: 14,
                     fontWeight: 'bold',
                     whiteSpace: 'nowrap',
-                  }} // Prevent text wrapping
+                  }}
                 >
                   SAVE RECIPE
                 </Typography>
@@ -179,7 +178,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  flexDirection: 'row', // Ensures the icon and text are on the same line
+                  flexDirection: 'row',
                 }}
               >
                 <PrintIcon sx={{ color: '#202020', mr: 1 }} />
@@ -189,7 +188,7 @@ export default function Main({ recipe }: { recipe: Recipe }) {
                     fontSize: 13,
                     fontWeight: 'bold',
                     whiteSpace: 'nowrap',
-                  }} // Prevent text wrapping
+                  }}
                 >
                   PRINT
                 </Typography>

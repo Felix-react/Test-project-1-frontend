@@ -40,7 +40,7 @@ const SecondNavbar = () => {
   };
 
   const handleLinkClick = (link: string) => {
-    setActiveLink(link); // Update the active link when clicked
+    setActiveLink(link);
   };
 
   // Return null to hide on small screens (mobile)
@@ -56,7 +56,7 @@ const SecondNavbar = () => {
           border: 'none',
           boxShadow: 'none',
           position: 'relative',
-          zIndex: 1, // Ensure second navbar stays behind the logo
+          zIndex: 1,
         }}
       >
         <Toolbar
@@ -74,8 +74,7 @@ const SecondNavbar = () => {
               width: '100%',
               height: '50px',
               alignItems: 'center',
-              paddingLeft: '240px', // Adjust padding to align with main navbar
-              gap: 3,
+              paddingLeft: '240px',
             }}
           >
             <Link
